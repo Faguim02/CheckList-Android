@@ -32,7 +32,7 @@ fun TodosComponent(
     ) {
         items(items = todos) {todo ->
             when {
-                todo.isCheck -> CardTodo(todo, MaterialTheme.colorScheme.secondary, Color.Black, mainViewModel)
+                todo.isCheck -> CardTodo(todo, MaterialTheme.colorScheme.secondary, MaterialTheme.colorScheme.onSecondary, mainViewModel)
                 else -> CardTodo(todo, MaterialTheme.colorScheme.tertiary, Color.Transparent, mainViewModel)
             }
             Spacer(modifier = Modifier.height(8.dp))

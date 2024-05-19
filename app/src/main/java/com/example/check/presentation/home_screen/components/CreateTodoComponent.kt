@@ -1,5 +1,6 @@
 package com.example.check.presentation.home_screen.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -32,17 +33,19 @@ fun CreateTodoComponent(
     var dataLembret: String = ""
 
     Column(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(MaterialTheme.colorScheme.background)
     ) {
         TextField(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp)
-                .border(width = 1.dp, color = Color.Black, shape = RoundedCornerShape(8.dp)),
+                .border(width = 1.dp, color = Color.LightGray, shape = RoundedCornerShape(8.dp)),
             value = task,
             onValueChange = { task = it },
             placeholder = {
-                Text("Digite sua tarefa aqui")
+                Text("Digite sua tarefa aqui", color = MaterialTheme.colorScheme.onBackground)
             },
             colors = TextFieldDefaults.colors(
                 focusedIndicatorColor = Color.Transparent,
@@ -121,7 +124,7 @@ fun CreateTodoComponent(
 
         Spacer(
             modifier = Modifier
-                .height(64.dp)
+                .fillMaxHeight()
         )
     }
 }
@@ -212,7 +215,7 @@ fun InterationDate(
             Icon(
                 imageVector = Icons.Rounded.KeyboardArrowUp,
                 contentDescription = null,
-                tint = Color.Black
+                tint = MaterialTheme.colorScheme.onBackground
             )
         }
         Text(
@@ -230,7 +233,7 @@ fun InterationDate(
             Icon(
                 imageVector = Icons.Rounded.KeyboardArrowDown,
                 contentDescription = null,
-                tint = Color.Black
+                tint = MaterialTheme.colorScheme.onBackground
             )
         }
     }

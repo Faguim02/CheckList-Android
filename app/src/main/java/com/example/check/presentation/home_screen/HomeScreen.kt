@@ -61,7 +61,7 @@ fun HomeScreen(
                 ModalBottomSheet(
                     onDismissRequest = { showBottomSheet = false },
                     sheetState = sheetState,
-                    containerColor = Color.White
+                    containerColor = MaterialTheme.colorScheme.background
                 ) {
 
                     CreateTodoComponent(mainViewModel)
@@ -120,7 +120,7 @@ fun TopBarApp() {
             )
             Box(
                 modifier = Modifier
-                    .background(Color.White, RoundedCornerShape(topStart = 16.dp))
+                    .background(MaterialTheme.colorScheme.background, RoundedCornerShape(topStart = 16.dp))
                     .fillMaxWidth()
                     .height(16.dp)
             )
